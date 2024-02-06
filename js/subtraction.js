@@ -1,8 +1,12 @@
 import { Calculator } from "./template.js";
 
-const subtraction = new Calculator(9,5);
+const NUMBER1 = process.env.NUMBER1;
+const NUMBER2 = process.env.NUMBER2;
 
-Calculator.prototype.sub = function(){
+const subtraction = new Calculator(NUMBER1,NUMBER2);
+
+// estamos haceindo que el objeto tenga una propiedad nueva 
+subtraction.sub = function(){
     return this.number1 - this.number2
 };
 
