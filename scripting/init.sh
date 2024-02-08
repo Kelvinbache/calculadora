@@ -43,18 +43,37 @@ echo "-------------------------------------------------"
 }
 
 
+
+colorBlue(){
+  blue="\e[34m" 
+  clear="\e[0m"
+  echo -ne $blue$1$clear
+}
+
+
+color_light_cyan(){
+  light_cyan="\e[96m" 
+  clear="\e[0m"
+  echo -ne $light_cyan$1$clear
+}
+
 # aqui creamos un menu interativo, y se repite varias veces 
 menu () {
 
 #simplemente esta mostrando un mesaje de las operaciones que se puenden realizar 
-read -p "bievenido a la calculador seleciones una operacion 
-1) addtion
-2) subtraction
-3) multiplication
-4) division
-5) exit
+
+echo -ne "
+bievenido a la calculador seleciones una operacion 
+
+$(colorBlue '1)') addtion
+$(colorBlue '2)') subtraction
+$(colorBlue '3)') multiplication
+$(colorBlue '4)') division
+$(colorBlue '5)') exit
 -------------------------------------------------------
-select:" operation
+$(color_light_cyan "select:")" 
+
+read operation 
 
 # Aqui una condicion, para diferenciar las operaciones que quiera hacer el usuario
 case $operation in 
@@ -76,3 +95,6 @@ menu
 
 # tenemos que ponerle color a esa terminal
 # aparte debemos poner las variables de entorno privadas y no publicas 
+
+
+#idea para los colores 

@@ -9,4 +9,5 @@ addition.sum = function(){
     return parseInt(this.number1) + parseInt(this.number2)
 }
 
-console.log(`result of the addition: ${addition.sum()}`)
+console.log((`result of the addition: ${addition.sum()}`))
+
